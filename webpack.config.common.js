@@ -16,7 +16,10 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: "public/assets", to: "dist" }
+                {
+                    from: path.resolve(__dirname, 'public/assets'),
+                    to: path.resolve(__dirname, 'dist')
+                }
             ],
         }),
     ]
