@@ -1,4 +1,10 @@
+@font-face {
+    font-family: Roboto;
+    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+}
+
 body {
+    font-family: Roboto, Arial, sans-serif;
     color: pink;
 
     p {

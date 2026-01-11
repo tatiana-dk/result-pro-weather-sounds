@@ -12,5 +12,5 @@ module.exports = merge(commonConfig, {
             new CssMinimizerPlugin(),
             new TerserPlugin()
         ],
-    },
+    }
 });
