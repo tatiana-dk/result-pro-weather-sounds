@@ -5,14 +5,122 @@
 
 body {
     font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
     height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+#bg {
+    position: relative;
+    z-index: 1;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        filter: blur(5px);
+        opacity: 0;
+        z-index: 1;
+        
+        .sunny &#sunny-bg,
+        .rainy &#rainy-bg,
+        .snowy &#snowy-bg {
+            opacity: 1;
+        }
+    }
 }
 
-.page-container {
+#page-container {
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 }
-.page-container--sunny {
-    background-image: url('./images/summer-bg.jpg');
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
 }
+h1 {
+    margin: 0;
+    font-size: 3rem;
+
+    .sunny & {
+        color: lightgreen;
+    }
+    .rainy & {
+        color: lightgray;
+    }
+    .snowy & {
+        color: #fff;
+    }
+}
+
+#sounds-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+
+    .sound-menu__item {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #ccc;
+        border-radius: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: border-color .3s ease, box-shadow .3s ease;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        &:hover {
+            border-color: #fff;
+            box-shadow: 0 0 15px #ffffff55 inset;
+        }
+
+        .pause-img {
+            display: none;
+        }
+
+        .icon-img,
+        .pause-img {
+            width: 32px;
+            height: 32px;
+        }
+
+        &:hover .icon-img,
+        &:hover .pause-img {
+            width: 34px;
+            height: 34px;
+        }
+
+        .sunny &#sunny-button,
+        .rainy &#rainy-button,
+        .snowy &#snowy-button {
+            border-color: #fff;
+            box-shadow: 0 0 15px #ffffff55 inset;
+
+            .icon-img {
+                display: none;
+            }
+            .pause-img {
+                display: block;
+            }
+        }
+    }
+}
+
