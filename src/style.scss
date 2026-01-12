@@ -1,13 +1,18 @@
 @font-face {
     font-family: Roboto;
-    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('./fonts/Roboto-Bold.ttf') format('truetype');
 }
 
 body {
     font-family: Roboto, Arial, sans-serif;
-    color: pink;
+    height: 100vh;
+}
 
-    p {
-        color: lightblue;
-    }
+.page-container {
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.page-container--sunny {
+    background-image: url('./images/summer-bg.jpg');
 }
