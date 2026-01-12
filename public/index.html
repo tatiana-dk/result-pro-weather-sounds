@@ -14,23 +14,24 @@
     </div>
 
     <div id="page-container">
+        <div id="content">
 
-        <h1>Weather sounds </h1>
+            <h1>Weather sounds </h1>
 
-        <menu id="sounds-menu">
-            <li class="sound-menu__item sound-menu__item--sunny">
-                <img src="./icons/sunny.svg" alt="Sunny">
-            </li>
-            <li class="sound-menu__item sound-menu__item--rainy">
-                <img src="./icons/rainy.svg" alt="Rainy">
-            </li>
-            <li class="sound-menu__item sound-menu__item--snowy">
-                <img src="./icons/snowy.svg" alt="Snowy">
-            </li>
-        </menu>
+            <menu id="sounds-menu">
+                <li id="sunny-button" class="sound-menu__item">
+                    <img src="./icons/sunny.svg" alt="Sunny">
+                </li>
+                <li id="rainy-button" class="sound-menu__item">
+                    <img src="./icons/rainy.svg" alt="Rainy">
+                </li>
+                <li id="snowy-button" class="sound-menu__item">
+                    <img src="./icons/snowy.svg" alt="Snowy">
+                </li>
+            </menu>
 
-        <input type="range" min="0" max="100" step="10" value="50" id="sound-volume">
-
+            <input type="range" min="0" max="100" step="10" value="50" id="sound-volume">
+        </div>
     </div>
 </body>
 </html>
