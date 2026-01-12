@@ -73,6 +73,10 @@ h1 {
     display: flex;
     gap: 24px;
 
+    @media(max-width: 565px) {
+        flex-direction: column;
+    }
+
     .sound-menu__item {
         width: 150px;
         height: 150px;
