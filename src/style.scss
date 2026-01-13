@@ -76,55 +76,53 @@ h1 {
     @media(max-width: 565px) {
         flex-direction: column;
     }
+}
 
-    .sound-menu__item {
-        width: 150px;
-        height: 150px;
-        border: 1px solid #ccc;
-        border-radius: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: border-color .3s ease, box-shadow .3s ease;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+.sound-menu__item {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color .3s ease, box-shadow .3s ease;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
-        &:hover {
-            border-color: #fff;
-            box-shadow: 0 0 15px #ffffff55 inset;
-        }
+    &:hover {
+        border-color: #fff;
+        box-shadow: 0 0 15px #ffffff55 inset;
+    }
 
-        .pause-img {
+    &.sound-menu__item--playing {
+        border-color: #fff;
+        box-shadow: 0 0 15px #ffffff55 inset;
+
+        .icon-img {
             display: none;
         }
-
-        .icon-img,
         .pause-img {
-            width: 32px;
-            height: 32px;
+            display: block;
         }
+    }
 
-        &:hover .icon-img,
-        &:hover .pause-img {
-            width: 34px;
-            height: 34px;
-        }
+    .pause-img {
+        display: none;
+    }
 
-        .sunny &#sunny-button,
-        .rainy &#rainy-button,
-        .snowy &#snowy-button {
-            border-color: #fff;
-            box-shadow: 0 0 15px #ffffff55 inset;
+    .icon-img,
+    .pause-img {
+        width: 32px;
+        height: 32px;
+    }
 
-            .icon-img {
-                display: none;
-            }
-            .pause-img {
-                display: block;
-            }
-        }
+    &:hover .icon-img,
+    &:hover .pause-img {
+        width: 34px;
+        height: 34px;
     }
 }
 
