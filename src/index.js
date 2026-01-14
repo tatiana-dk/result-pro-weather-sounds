@@ -2,6 +2,7 @@
 
 import './style.scss';
 import { Sound } from './components/sound';
+import { Volume } from './components/volume';
 
 const types = ['sunny', 'rainy', 'snowy'];
 
@@ -24,11 +25,10 @@ function onClick(type) {
     });
 }
 
-const volume = document.getElementById('sound-volume');
-volume.addEventListener('input', () => {
-    let value = (volume.value - volume.min) / (volume.max - volume.min);
-    value = Number(value.toFixed(1));
-
-    sounds.forEach(b => {b.setVolume(value);});
+const volume = new Volume({
+    el: document.getElementById('sound-volume'),
+    onInput: value => { sounds.forEach(b => {b.setVolume(value);});}
 });
+
+volume.handleInput();
 
