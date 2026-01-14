@@ -2,17 +2,17 @@ export class Sound {
     constructor({type, onClick}) {
         this.type = type;
         this.onClick = onClick;
-        this.init();
+        this.#init();
     }
 
-    init() {
+    #init() {
         this.button = document.getElementById(`${this.type}-button`);
         this.audio = document.getElementById(`${this.type}-audio`);
 
-        this.button.addEventListener('click', () => {this.handleButtonClick();});
+        this.button.addEventListener('click', () => {this.#handleButtonClick();});
     }
 
-    handleButtonClick() {
+    #handleButtonClick() {
         if (this.#isPlaying()) {
             this.pause();
         } else {
@@ -22,6 +22,10 @@ export class Sound {
         this.toggleHighlight();
 
         this.onClick();
+    }
+
+    #isPlaying() {
+        return !this.audio.paused;
     }
 
     play() {
@@ -38,9 +42,5 @@ export class Sound {
 
     setVolume(value) {
         this.audio.volume = value;
-    }
-
-    #isPlaying() {
-        return !this.audio.paused;
     }
 }
