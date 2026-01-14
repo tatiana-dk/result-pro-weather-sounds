@@ -61,6 +61,10 @@ h1 {
     margin: 0;
     font-size: 3rem;
 
+    @media(max-width: 565px) {
+        font-size: 2rem;
+    }
+
     .sunny & {
         color: lightgreen;
     }
@@ -101,6 +105,12 @@ h1 {
     &:hover {
         border-color: #fff;
         box-shadow: 0 0 15px #ffffff55 inset;
+    }
+
+    @media(max-width: 565px) {
+        width: 120px;
+        height: 120px;
+        border-radius: 16px;
     }
 
     &.sound-menu__item--playing {
