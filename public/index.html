@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Sounds App</title>
 </head>
-<body>
+<body class="sunny">
 
-    <h1>Heading</h1>
+    <div id="bg">
+        <img src="./images/sunny-bg.jpg" alt="" id="sunny-bg" />
+        <img src="./images/rainy-bg.jpg" alt="" id="rainy-bg" />
+        <img src="./images/snowy-bg.jpg" alt="" id="snowy-bg" />
+    </div>
 
-    <p>Text</p>
-    
+    <div id="page-container">
+        <div id="content">
+
+            <h1>Weather sounds </h1>
+
+            <menu id="sounds-menu">
+                <li id="sunny-button" class="sound-menu__item" style="background-image: url(./images/sunny-bg.jpg);">
+                    <img src="./icons/sunny.svg" class="icon-img" alt="">
+                    <img src="./icons/pause.svg" class="pause-img" alt="">
+                    <audio src="/sounds/sunny.mp3" loop id="sunny-audio"></audio>
+                </li>
+                <li id="rainy-button" class="sound-menu__item" style="background-image: url(./images/rainy-bg.jpg);">
+                    <img src="./icons/rainy.svg" class="icon-img" alt="">
+                    <img src="./icons/pause.svg" class="pause-img" alt="">
+                    <audio src="/sounds/rainy.mp3" loop id="rainy-audio"></audio>
+                </li>
+                <li id="snowy-button" class="sound-menu__item" style="background-image: url(./images/snowy-bg.jpg);">
+                    <img src="./icons/snowy.svg" class="icon-img" alt="">
+                    <img src="./icons/pause.svg" class="pause-img" alt="">
+                    <audio src="/sounds/snowy.mp3" loop id="snowy-audio"></audio>
+                </li>
+            </menu>
+
+            <input type="range" min="0" max="100" step="10" value="50" id="sound-volume">
+        </div>
+    </div>
 </body>
 </html>
