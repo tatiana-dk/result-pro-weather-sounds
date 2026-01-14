@@ -21,7 +21,7 @@ export class Sound {
 
         this.toggleHighlight();
 
-        this.onClick();
+        this.onClick(this.type);
     }
 
     #isPlaying() {

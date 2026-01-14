@@ -8,7 +8,7 @@ const types = ['sunny', 'rainy', 'snowy'];
 
 const sounds = types.map(t => new Sound({
     type: t,
-    onClick: () => {onClick(t);}
+    onClick
 }));
 
 function onClick(type) {
