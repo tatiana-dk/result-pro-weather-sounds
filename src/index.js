@@ -5,13 +5,13 @@ import { Sound } from './components/sound';
 
 const types = ['sunny', 'rainy', 'snowy'];
 
-const buttons = types.map(t => new Sound({
+const sounds = types.map(t => new Sound({
     type: t,
     onClick: () => {onClick(t);}
 }));
 
 function onClick(type) {
-    buttons.forEach(b => {
+    sounds.forEach(b => {
         const isClicked = b.type === type;
 
         if (isClicked) {
@@ -29,6 +29,6 @@ volume.addEventListener('input', () => {
     let value = (volume.value - volume.min) / (volume.max - volume.min);
     value = Number(value.toFixed(1));
 
-    buttons.forEach(b => {b.setVolume(value);});
+    sounds.forEach(b => {b.setVolume(value);});
 });
 
